@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NASA Picture of the Day</title>
+</head>
+<body>
+    <h1>{{ apod.title }}</h1>
+    <p>Date: {{ apod.date }}</p>
+    {% if apod.media_type == "image" %}
+        <img src="{{apod.url}}" alt="NASA Picture of the Day" width="500px">
+    {% elif apod.media_type == "video" %}
+        <iframe src="{{apod.url}}" frameborder="0" width="500px"></iframe>
+    {% endif %}
+    <p>{{ apod.description }}</p>
+</body>
+</html>
